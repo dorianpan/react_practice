@@ -1,5 +1,7 @@
 .topLevel { /* app level的style，用grid system进行展示*/
-  width: 45vw;
+  width: 50vw;
+  height: 90vh;
+  padding: 1vw 0;
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-gap: 2vw;
@@ -9,7 +11,7 @@
 
 .rightContainer{
   display: grid;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: 1fr 5fr;
   grid-gap: 2vw;
   margin: 0.5vw 1vw 2vw 1vw;
   background-color:blanchedalmond;
@@ -19,6 +21,12 @@
   display: grid;
   grid-auto-rows:auto;
   background-color: aqua;
+  list-style-type: none;
+}
+
+.typeListContainer :hover{
+  background-color:aquamarine;
+  cursor: pointer;
 }
 
 .filterBarContainer{

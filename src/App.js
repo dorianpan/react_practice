@@ -45,10 +45,14 @@ const products = {
 
 function App() {
   const [selectedType, setSelectedType] = useState(types[0])
-  console.log(products[selectedType.id])
+  // console.log(products[selectedType.id])
+  function handleClick(i){
+    setSelectedType(types[i-1]); // offset by 1 as arrays are 0-indexed
+  }
+  
   return (
     <div className = "topLevel">
-      <TypeList types = {types}> </TypeList>
+      <TypeList types = {types} handleClick = {handleClick}> </TypeList>
       <div className = "rightContainer">
         <FilterBar subTypes = {selectedType.subTypes} > </FilterBar>
         <ProductList items = {products[selectedType.id]}></ProductList>
