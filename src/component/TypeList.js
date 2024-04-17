@@ -1,4 +1,5 @@
 import React from 'react'
+import TypeItem from './TypeItem'
 
 /**
  * TypeList是左侧分类栏的组件，显示一组类型列表
@@ -7,7 +8,7 @@ import React from 'react'
  *                   选中的类型id
  * 
  */
-export default function TypeList({ types, handleClick }){
+export default function TypeList({ types, handleClick, selected }){
     return (
         <div  className = "typeListContainer">
             {   
@@ -16,10 +17,8 @@ export default function TypeList({ types, handleClick }){
                     type => (
                         // 使用箭头函数在点击事件上调用handleClick函数，传入当前类id
                         // 让父组件知道选中类型的id
-                        <li key = {type.id} onClick = {() => handleClick(type.id)}
-                            className = "typeListItem">
-                            {type.name}
-                        </li>
+                        <TypeItem key = {type.id} type = {type} handleClick = {handleClick}
+                        selected = {selected}></TypeItem>
                     )
                 )
             }

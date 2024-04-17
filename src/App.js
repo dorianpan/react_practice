@@ -12,7 +12,7 @@ import {types, products} from './component/data'
 function App() {
   // 使用useState初始化selectedType为数组的第一个元素
   const [selectedType, setSelectedType] = useState(types[0])
-
+  const [selectedFilter, setSelectedFilter] = useState("猜你喜欢")
   /**
    * handleClick函数，更新用户选择的产品类型
    * 
@@ -22,16 +22,23 @@ function App() {
     // 更新selectedType为types数组的第i-1个元素
     // 因为数组是0索引的
     setSelectedType(types[i-1]); 
+    setSelectedFilter("猜你喜欢"); //重新初始化子类别
+  }
+
+  function handleClickFilter(s){
+    setSelectedFilter(s);
+
   }
   
   // 渲染组件
   return (
     <div className = "topLevel">
       {/* TypeList组件显示类型列表，点击类型时会调用handleClick */}
-      <TypeList types = {types} handleClick = {handleClick}> </TypeList>
+      <TypeList types = {types} handleClick = {handleClick} selected = {selectedType}> </TypeList>
       <div className = "rightContainer">
         {/* FilterBar组件显示选定类型的子类型过滤器，点击会跳转到页面对应位置 */}
-        <FilterBar subTypes = {selectedType.subTypes} > </FilterBar>
+        <FilterBar subTypes = {selectedType.subTypes} handleClickFilter = {handleClickFilter} 
+                   selectedFilter = {selectedFilter}> </FilterBar>
 
         {/* 产品数据通过selectedType的id从products中获取，数据为伪数据，存放与data.js */}
         <Product items = {products[selectedType.id]} subTypes = {selectedType.subTypes}></Product>

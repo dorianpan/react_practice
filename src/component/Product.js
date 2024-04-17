@@ -20,6 +20,7 @@ export default function Product({subTypes, items}){
                     )
                        
             )}
+            <div className = "productListMsg"> ———— 到底啦 ————</div>
         </div>
     )
 

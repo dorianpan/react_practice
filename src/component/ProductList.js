@@ -22,7 +22,7 @@ export default function ProductList({ category, items }){
         return (
             <div>
                 <h3 className = "productListHeader">{category}</h3>
-                <div>
+                <div className = "productListMsg">
                     -- 新的宝贝在路上啦，请敬请期待！--
                 </div>
 
