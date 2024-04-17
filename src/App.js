@@ -29,7 +29,6 @@ function App() {
     <div className = "topLevel">
       {/* TypeList组件显示类型列表，点击类型时会调用handleClick */}
       <TypeList types = {types} handleClick = {handleClick}> </TypeList>
-
       <div className = "rightContainer">
         {/* FilterBar组件显示选定类型的子类型过滤器，点击会跳转到页面对应位置 */}
         <FilterBar subTypes = {selectedType.subTypes} > </FilterBar>

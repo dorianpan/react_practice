@@ -8,7 +8,7 @@ import ProductList from './ProductList'
  */
 export default function Product({subTypes, items}){
     return (
-        <div>
+        <div className = "productContainer">
             {
                 // 遍历所有数组，为每个子类渲染一个ProductList组件
                 subTypes.map(

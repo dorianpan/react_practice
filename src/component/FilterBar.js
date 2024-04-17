@@ -17,14 +17,19 @@ export default function FilterBar({subTypes}){
 
     
     return (
-        <div className = "filterBarContainer">
-            {
-                subTypes.map(subType => (
-                    <li key = {subType} onClick = {() => (handleClick(subType))}>
-                    {subType}
-                    </li>
-                ))
-            }   
-        </div>
+        <>
+            <div className = "topMask"> </div>
+            <div className = "filterBarContainer">
+                {
+                    subTypes.map(subType => (
+                        <li key = {subType} onClick = {() => (handleClick(subType))}>
+                        {subType}
+                        </li>
+                    ))
+                }   
+            </div>
+
+        </>
+        
     )
 }

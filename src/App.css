@@ -1,13 +1,15 @@
 /* 该文件定义了App所用到的所有css， 需要在App.js 中import*/
+
 .topLevel { /* app level的style，用grid system进行展示*/
-  padding: 20px 0 0 0;
+  padding: 20px 0 0 0; /* 顶部20px padding, 美观目的 */
   width: 99vw;
   min-width: 350px;
   height:100vh;
-  display: grid;
+  display: grid; 
+  margin: 0 100px 0 0;
   grid-template-columns: 100px auto;
   /* margin: 0.5vw 1vw 2vw 1vw; */
-  background-color:#F0F0F0;
+  /* background-color:#F0F0F0; */
   font-family: "Helvetica Neue, Helvetica, STHeiTi, sans-serif";
   font-weight: 500;
 }
@@ -15,14 +17,18 @@
 /*********开始：左边类别栏的style部分********/
 .typeListContainer{
   justify-self: center;
-  width: 100px;
+  width: 100px;   
+  height: 100vh; /* 左侧类别栏高度覆盖整个页面 */
   display: flex;
   flex-direction:column;
-  background-color:#F0F0F0;
-  list-style-type: none;
+  list-style-type: none; /* 每个tab是一个li，不显示默认的bulletpoint*/
   font-size: large;
   overflow-x: auto;
-  padding: 25px 0 0 0;
+  padding: 25px 0 0 0; /*顶部25px padding, 与顶部分类条对其*/
+  position:fixed;  /* 不随页面滚动而变化，与实际淘宝一致 */
+  background-color:#F0F0F0; 
+  top: 0;
+  left: 0;
 }
 
 .typeListContainer :hover{
@@ -39,11 +45,13 @@
   height: 50px;
   width: 100%;
 }
+
 /*********结束：左边类别栏的style部分********/
 
 
 /*********开始：右边container的style部分：******/
 .rightContainer{ 
+  grid-column: 2;
   justify-self: left;
   width: 100%; 
   height: 100%;
@@ -58,16 +66,20 @@
 
 .filterBarContainer{
   text-decoration: none;
-  height: 100%;
-  margin: 10px 10px 0 10px;
+  /* height: 100%; */
+  height: 30px;
+  width:100%;
+  /* margin: 10px 10px 0 10px; */
   display: flex;
   justify-content:flex-start;
   align-items: center;
   list-style-type:none;
   flex-wrap: nowrap;
   overflow-x: auto;
-  
-  /* background-color:#000000; */
+
+  position:fixed;
+
+  background-color:#FFFFFF;
 }
 
 .filterBarContainer li{
@@ -84,6 +96,19 @@
  cursor: pointer;
 }
 
+.topMask{
+  background-color: #F0F0F0;
+  position: fixed; /* 保证顶部在滚动的时候不会出现背景不一致*/
+  height:20px;
+  top: 0;
+  width: 100%;
+
+}
+
+.productContainer{
+  grid-row: 2; /* 将主要内容放到第二行，起到一个top margin的作用，同时保证
+                *  grid system的一致性 */
+}
 
 .productListContainer{
   display: grid; /*用grid实现间距相等，同时保证左对齐*/
