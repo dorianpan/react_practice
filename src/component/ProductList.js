@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Item from './Item'
 /**
  * ProductList 模组，属于Product的子模组，用于渲染一个商品展示的block
  * 
@@ -36,13 +36,7 @@ export default function ProductList({ category, items }){
             <div className = "productListContainer">
                 { qualifiedItem.map(
                     item => (
-                        <div key = {item.id} id = {item.id} className="productListItemWrapper">
-                            <div className = "productListItem">
-                                {item.name}
-                            </div>
-                            
-                            
-                        </div>
+                        <Item key = {item.id} item = {item}></Item>
                     )
                 )}
             </div>
