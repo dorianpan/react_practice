@@ -32,7 +32,7 @@ export default function ProductList({ category, items }){
 
     return (
         <div>
-            <h3 id = {category} className = "productListHeader">{category}</h3>
+            <div id = {category} className = "productListHeader">{category}</div>
             <div className = "productListContainer">
                 { qualifiedItem.map(
                     item => (

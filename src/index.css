@@ -1,8 +1,11 @@
+html{
+  scroll-padding-top: 70px; /* padding used for preventing fixed elements from hidding the text*/
+  /* scroll-padding-left: 20px; */
+  /* overflow-x: hidden; */
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

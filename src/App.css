@@ -2,11 +2,11 @@
 
 .topLevel { /* app level的style，用grid system进行展示*/
   padding: 20px 0 0 0; /* 顶部20px padding, 美观目的 */
-  width: 99vw;
+  width: 100%;
   min-width: 350px;
-  height:100vh;
+  height:100%;
   display: grid; 
-  margin: 0 100px 0 0;
+  /* margin: 0 100px 0 0; */
   grid-template-columns: 100px auto;
   /* margin: 0.5vw 1vw 2vw 1vw; */
   /* background-color:#F0F0F0; */
@@ -18,7 +18,7 @@
 .typeListContainer{
   justify-self: center;
   width: 100px;   
-  height: 100vh; /* 左侧类别栏高度覆盖整个页面 */
+  height: 100%; /* 左侧类别栏高度覆盖整个页面 */
   display: flex;
   flex-direction:column;
   list-style-type: none; /* 每个tab是一个li，不显示默认的bulletpoint*/
