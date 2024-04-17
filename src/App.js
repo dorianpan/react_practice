@@ -3,7 +3,8 @@ import './App.css';
 import React, {useState, useEffect} from 'react'
 import FilterBar from './component/FilterBar'
 import TypeList from './component/TypeList' 
-import ProductList from './component/ProductList'
+import Product from './component/Product'
+
 
 const types = [
   { id: 1, name: "运动", subTypes : ["猜你喜欢", "跑步", "运动潮流", "垂钓"]},
@@ -13,31 +14,31 @@ const types = [
 
 const products = { 
   1 : [
-    {id : 1001, name : "跑步鞋", img : ""},
-    {id : 1002, name : "篮球鞋", img : ""},
-    {id : 1003, name : "运动卫衣", img : ""},
-    {id : 1004, name : "滑板", img : ""},
-    {id : 1005, name : "瑜伽垫", img : ""}
+    {id : 1001, name : "跑步鞋", img : "", types: ["猜你喜欢","跑步","运动潮流"]},
+    {id : 1002, name : "篮球鞋", img : "", types: ["猜你喜欢","运动潮流"]},
+    {id : 1003, name : "运动卫衣", img : "", types: ["猜你喜欢","运动潮流"]},
+    {id : 1004, name : "滑板", img : "", types: ["猜你喜欢","运动潮流"]},
+    {id : 1005, name : "鱼钩", img : "", types: ["垂钓"]}
   ]
 , 
 
 
   2 : [
-    {id : 2001, name : "零食", img : ""},
-    {id : 2002, name : "方便面", img : ""},
-    {id : 2003, name : "饼干", img : ""},
-    {id : 2004, name : "熟食", img : ""},
-    {id : 2005, name : "健康清饮食", img : ""}
+    {id : 2001, name : "零食", img : "", types: ["猜你喜欢"]},
+    {id : 2002, name : "方便面", img : "", types: ["猜你喜欢"]},
+    {id : 2003, name : "饼干", img : "", types: ["猜你喜欢"]},
+    {id : 2004, name : "熟食", img : "", types: ["猜你喜欢"]},
+    {id : 2005, name : "健康清饮食", img : "", types: ["猜你喜欢"]}
   ]
 , 
 
 
   3 : [
-    {id : 3001, name : "贴纸书", img : ""},
-    {id : 3001, name : "发声书", img :""},
-    {id : 3001, name : "立体书", img : ""},
-    {id : 3001, name : "年轻阅读", img : ""},
-    {id : 3001, name : "洞洞书", img : ""}
+    {id : 3001, name : "贴纸书", img : "", types: ["猜你喜欢"]},
+    {id : 3001, name : "发声书", img :"", types: ["猜你喜欢"]},
+    {id : 3001, name : "立体书", img : "", types: ["猜你喜欢"]},
+    {id : 3001, name : "年轻阅读", img : "", types: ["猜你喜欢"]},
+    {id : 3001, name : "洞洞书", img : "", types: ["猜你喜欢"]}
   ]
 }
 
@@ -55,7 +56,7 @@ function App() {
       <TypeList types = {types} handleClick = {handleClick}> </TypeList>
       <div className = "rightContainer">
         <FilterBar subTypes = {selectedType.subTypes} > </FilterBar>
-        <ProductList items = {products[selectedType.id]}></ProductList>
+        <Product items = {products[selectedType.id]} subTypes = {selectedType.subTypes}></Product>
       </div>
      
     </div>
