@@ -5,7 +5,7 @@ export default function ProductList({ items }){
         <div className = "productListContainer">
             { items.map(
                 item => (
-                    <div key = {items.id} id = {items.id}>
+                    <div key = {items.id} id = {items.id} className="productListItem">
                         <span>
                             {item.name}
                         </span>

@@ -6,7 +6,8 @@ export default function TypeList({ types, handleClick }){
             {
                 types.map(
                     type => (
-                        <li onClick = {() => handleClick(type.id)}>
+                        <li onClick = {() => handleClick(type.id)}
+                            className = "typeListItem">
                             {type.name}
                         </li>
                     )
