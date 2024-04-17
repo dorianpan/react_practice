@@ -4,58 +4,37 @@ import React, {useState, useEffect} from 'react'
 import FilterBar from './component/FilterBar'
 import TypeList from './component/TypeList' 
 import Product from './component/Product'
+import {types, products} from './component/data'
 
-
-const types = [
-  { id: 1, name: "运动", subTypes : ["猜你喜欢", "跑步", "运动潮流", "垂钓"]},
-  { id: 2, name: "食品", subTypes : ["猜你喜欢", "零食", "方便速食"]},
-  { id: 3, name: "图书", subTypes : ["猜你喜欢", "童书", "教育考试"]},
-]
-
-const products = { 
-  1 : [
-    {id : 1001, name : "跑步鞋", img : "", types: ["猜你喜欢","跑步","运动潮流"]},
-    {id : 1002, name : "篮球鞋", img : "", types: ["猜你喜欢","运动潮流"]},
-    {id : 1003, name : "运动卫衣", img : "", types: ["猜你喜欢","运动潮流"]},
-    {id : 1004, name : "滑板", img : "", types: ["猜你喜欢","运动潮流"]},
-    {id : 1005, name : "鱼钩", img : "", types: ["垂钓"]}
-  ]
-, 
-
-
-  2 : [
-    {id : 2001, name : "零食", img : "", types: ["猜你喜欢"]},
-    {id : 2002, name : "方便面", img : "", types: ["猜你喜欢"]},
-    {id : 2003, name : "饼干", img : "", types: ["猜你喜欢"]},
-    {id : 2004, name : "熟食", img : "", types: ["猜你喜欢"]},
-    {id : 2005, name : "健康清饮食", img : "", types: ["猜你喜欢"]}
-  ]
-, 
-
-
-  3 : [
-    {id : 3001, name : "贴纸书", img : "", types: ["猜你喜欢"]},
-    {id : 3001, name : "发声书", img :"", types: ["猜你喜欢"]},
-    {id : 3001, name : "立体书", img : "", types: ["猜你喜欢"]},
-    {id : 3001, name : "年轻阅读", img : "", types: ["猜你喜欢"]},
-    {id : 3001, name : "洞洞书", img : "", types: ["猜你喜欢"]}
-  ]
-}
-
-
-
+/**
+ * 主要function,通过app实现商品分类页面的渲染
+ */
 function App() {
+  // 使用useState初始化selectedType为数组的第一个元素
   const [selectedType, setSelectedType] = useState(types[0])
-  // console.log(products[selectedType.id])
+
+  /**
+   * handleClick函数，更新用户选择的产品类型
+   * 
+   * @param {number} i 由TypeList传入的type id, 代表了用户选择的
+   */
   function handleClick(i){
-    setSelectedType(types[i-1]); // offset by 1 as arrays are 0-indexed
+    // 更新selectedType为types数组的第i-1个元素
+    // 因为数组是0索引的
+    setSelectedType(types[i-1]); 
   }
   
+  // 渲染组件
   return (
     <div className = "topLevel">
+      {/* TypeList组件显示类型列表，点击类型时会调用handleClick */}
       <TypeList types = {types} handleClick = {handleClick}> </TypeList>
+
       <div className = "rightContainer">
+        {/* FilterBar组件显示选定类型的子类型过滤器，点击会跳转到页面对应位置 */}
         <FilterBar subTypes = {selectedType.subTypes} > </FilterBar>
+
+        {/* 产品数据通过selectedType的id从products中获取，数据为伪数据，存放与data.js */}
         <Product items = {products[selectedType.id]} subTypes = {selectedType.subTypes}></Product>
       </div>
      

@@ -1,3 +1,4 @@
+/* 该文件定义了App所用到的所有css， 需要在App.js 中import*/
 
 .topLevel { /* app level的style，用grid system进行展示*/
   width: 99vw;
