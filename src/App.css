@@ -70,24 +70,6 @@
   text-align:center;
 }
 
-/* .productListContainer{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  background-color:yellow;
-  text-align: center;
-  
-}
-.productListItem{
-  width: 100px;
-  height: 100px;
-  background-color: lightblue;
-  margin: 10px;
-} */
-
 .productListContainer{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

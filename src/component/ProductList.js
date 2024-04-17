@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function ProductList({ category, items }){
-
     let qualifiedItem = [];
     // 遍历所有items，如果item属于该category，则加入qualified以便后续渲染
     items.forEach(item => {
@@ -26,7 +25,7 @@ export default function ProductList({ category, items }){
 
     return (
         <div>
-            <h3>{category}</h3>
+            <h3 id = {category}>{category}</h3>
             <div className = "productListContainer">
                 { qualifiedItem.map(
                     item => (
@@ -42,9 +41,6 @@ export default function ProductList({ category, items }){
             </div>
 
         </div>
-        
-
-
     )
     
 }
