@@ -21,7 +21,7 @@ export default function ProductList({ category, items }){
     if (qualifiedItem.length === 0){ // 没有符合元素，该类别为空
         return (
             <div>
-                <h3>{category}</h3>
+                <h3 className = "productListHeader">{category}</h3>
                 <div>
                     -- 新的宝贝在路上啦，请敬请期待！--
                 </div>
@@ -32,7 +32,7 @@ export default function ProductList({ category, items }){
 
     return (
         <div>
-            <h3 id = {category}>{category}</h3>
+            <h3 id = {category} className = "productListHeader">{category}</h3>
             <div className = "productListContainer">
                 { qualifiedItem.map(
                     item => (
