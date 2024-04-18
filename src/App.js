@@ -1,3 +1,12 @@
+/**
+ * FileName: App.js
+ * Author: 潘思宇
+ * Date: 2024/4/17
+ * Description: 该app是基于React的前端模拟淘宝网商品分类节目的项目，该项目通过
+ *              react实现了根据分类选项进行实时渲染的功能，同时运用css实现了和
+ *              淘宝页面相近的样式设计。所使用的数据均为伪数据，数据获取渠道为Google
+ */
+
 import logo from './logo.svg';
 import './App.css';
 import React, {useState, useEffect} from 'react'
