@@ -7,10 +7,10 @@ import React from 'react'
  * @param {Object} selected - 选中商品类型的object
  */
 export default function TypeItem({type, handleClick, selected}){
+    // 若为选中的type则设置class为orange，高亮
     if (type.id === selected.id){
         return (
             <>  
-                
                 <li key = {type.id} onClick = {() => handleClick(type.id)}
                                 className = "typeListItemSelected">
                     <div className = "orangeBar"></div>  
@@ -20,6 +20,7 @@ export default function TypeItem({type, handleClick, selected}){
         )
     }
 
+    // 若未选中则默认class
     return (
         <>
             <li key = {type.id} onClick = {() => handleClick(type.id)}

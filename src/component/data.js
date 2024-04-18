@@ -3,7 +3,7 @@
 
 // 所有商品类型以及子类型的数据
   export const types = [
-    { id: 1, name: "运动", subTypes : ["猜你喜欢", "跑步", "运动潮流", "垂钓"]},
+    { id: 1, name: "运动", subTypes : ["猜你喜欢", "跑步", "运动潮流", "垂钓", "球迷","健身", "登山"]},
     { id: 2, name: "食品", subTypes : ["猜你喜欢", "零食", "方便速食"]},
     { id: 3, name: "图书", subTypes : ["猜你喜欢", "童书", "教育考试"]},
   ]
@@ -11,11 +11,16 @@
 // 所有商品的数据，每个object对于一个商品类以及包含的商品
   export const products = { 
     1 : [
-      {id : 1001, name : "跑步鞋", img : "/images/跑步鞋.jpg", types: ["猜你喜欢","跑步","运动潮流"]},
-      {id : 1002, name : "篮球鞋", img : "/images/篮球鞋.jpg", types: ["猜你喜欢","运动潮流"]},
+      {id : 1001, name : "跑步鞋", img : "/images/跑步鞋.jpg", types: ["猜你喜欢","跑步","健身"]},
+      {id : 1002, name : "篮球鞋", img : "/images/篮球鞋.jpg", types: ["猜你喜欢","运动潮流","健身","球迷"]},
       {id : 1003, name : "运动卫衣", img : "/images/运动卫衣.jpg", types: ["猜你喜欢","运动潮流"]},
       {id : 1004, name : "滑板", img : "/images/滑板.jpg", types: ["猜你喜欢","运动潮流"]},
-      {id : 1005, name : "鱼钩", img : "/images/鱼钩.jpg", types: ["垂钓"]}
+      {id : 1005, name : "鱼钩", img : "/images/鱼钩.jpg", types: ["垂钓"]},
+      {id : 1006, name : "跑步T恤", img : "", types: ["猜你喜欢","健身","运动潮流","跑步"]},
+      {id : 1007, name : "跑步裤", img : "", types: ["猜你喜欢","健身","跑步"]},
+      {id : 1008, name : "跑步外套", img : "", types: ["猜你喜欢","健身", "运动潮流","跑步"]},
+      {id : 1009, name : "帽子", img : "", types: ["健身", "运动潮流","登山","跑步"]},
+      {id : 1010, name : "鱼竿", img : "", types: ["垂钓"]},
     ]
   , 
   

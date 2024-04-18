@@ -82,26 +82,26 @@
 .filterBarContainer{
   text-decoration: none;
   /* height: 100%; */
-  height: 30px;
-  width:100%;
+  height: 40px;
+  width: calc(100vw - 100px);
   /* margin: 10px 10px 0 10px; */
   display: flex;
   justify-content:flex-start;
   align-items: center;
   list-style-type:none;
   flex-wrap: nowrap;
-  overflow-x: auto;
-
   position:fixed;
-
   background-color:#FFFFFF;
+  overflow-x: auto;
 }
+
 
 .filterBarContainer li{
   margin: 0 3px;
   padding:3px 10px;
   font-size: 12px;
   background-color:#F0F0F0;
+  white-space: nowrap;
   text-align:center;
   color:#757575;
   border-radius: 10px;
@@ -119,7 +119,7 @@
 .topMask{
   background-color: #F0F0F0;
   position: fixed; /* 保证顶部在滚动的时候不会出现背景不一致*/
-  height:20px;
+  height:21px;
   top: 0;
   width: 100%;
 

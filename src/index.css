@@ -1,7 +1,7 @@
 html{
-  scroll-padding-top: 70px; /* padding used for preventing fixed elements from hidding the text*/
-  /* scroll-padding-left: 20px; */
-  /* overflow-x: hidden; */
+  scroll-padding-top: 60px; /* padding used for preventing fixed elements from hidding the text*/
+  scroll-padding-left: 120px;
+  overflow-x: hidden;
 }
 
 body {
