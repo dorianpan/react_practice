@@ -32,6 +32,10 @@ function App() {
     // 因为数组是0索引的
     setSelectedType(types[i-1]); 
     setSelectedFilter("猜你喜欢"); //重新初始化子类别
+    const elem = document.getElementById("猜你喜欢");
+    if (elem){
+        elem.scrollIntoView({alignToTop: false, behavior: "smooth"}); //滚动到顶部
+    }
   }
 
   function handleClickFilter(s){
