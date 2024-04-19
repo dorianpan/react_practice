@@ -26,7 +26,8 @@ export default function ProductList({ category, items }){
     if (qualifiedItem.length === 0){ // 没有符合元素，该类别为空
         return (
             <div>
-                <h3 className = "productListHeader">{category}</h3>
+                <div id = {category} className = "productListHeader">{category}</div>
+                
                 <div className = "productListMsg">
                     -- 新的宝贝在路上啦，请敬请期待！--
                 </div>

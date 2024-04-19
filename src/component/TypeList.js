@@ -15,18 +15,24 @@ import TypeItem from './TypeItem'
  */
 export default function TypeList({ types, handleClick, selected }){
     return (
-        <div  className = "typeListContainer">
-            {   
-                // 迭代types数组，为每个类型生产一个列表项
-                types.map(
-                    type => (
-                        // 使用箭头函数在点击事件上调用handleClick函数，传入当前类id
-                        // 让父组件知道选中类型的id
-                        <TypeItem key = {type.id} type = {type} handleClick = {handleClick}
-                        selected = {selected}></TypeItem>
+        <>
+            <div className = "leftMask">
+            </div>
+            <div  className = "typeListContainer">
+                <div className = "topspacer"></div>
+                {   
+                    // 迭代types数组，为每个类型生产一个列表项
+                    types.map(
+                        type => (
+                            // 使用箭头函数在点击事件上调用handleClick函数，传入当前类id
+                            // 让父组件知道选中类型的id
+                            <TypeItem key = {type.id} type = {type} handleClick = {handleClick}
+                            selected = {selected}></TypeItem>
+                        )
                     )
-                )
-            }
-        </div>
+                }
+            </div>
+        </>
+        
     )
 }
